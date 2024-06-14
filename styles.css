@@ -1,0 +1,795 @@
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'roboto';
+}
+
+html{
+   
+    width: 100vw;
+    overflow: hidden;
+    color: black;
+}
+
+/*===============================================
+    Chart Container Styles
+================================================*/
+
+.chart_container{
+    display: none;
+    position: relative;
+    max-width: 68em;
+    justify-content: center;
+    flex-wrap: nowrap;
+    border-radius: 20px;
+    margin: 0px auto;
+    padding-top: 10px;
+    box-shadow:  17px 17px 34px rgba(0, 0, 0, 0.315), -17px -17px 34px rgba(255, 255, 255, 0.151)
+}
+
+.chart{
+    position: relative;
+    flex: 0 1 175px;
+}
+
+
+.chart::after{
+    content: '';
+    position: absolute;
+    top: 173px;
+    left: 32px; 
+    width: 85px;
+    height: 85px;
+    z-index: 0;
+    box-shadow: 17px 17px 34px rgba(0, 0, 0, 0.295), -17px -17px 34px rgba(255, 255, 255, 0.24);
+    border-radius: 50%;
+    transform: translate(3px,-151px);
+}
+
+.chart_container .reset_button{
+    position: absolute;
+    transform: translate(0px, -20px);
+    border-radius: 4px;
+    padding: 2px 9px;
+    cursor: pointer;
+    background: white;
+    z-index: 1;
+}
+.interval_total{
+    position: absolute;
+    left: -300px;
+    font-size: 8em;
+    color: white;
+    opacity: .5;
+}
+
+/*===============================================
+    Intro Screen
+================================================*/
+
+.intro_screen{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    background: #FFB4A2;
+    color: white;
+    z-index: 100;
+ 
+  }
+  
+  .text{
+    opacity: 1;
+    display: inline-block;
+ 
+  }
+
+/*===============================================
+    Main Styles
+================================================*/
+
+
+
+
+.page_area{
+    width: 100vw;
+    height: 100vh;
+    
+    
+}
+
+.practice_area{
+
+    display: flex;
+    max-width: 68em;
+    box-shadow:  17px 17px 34px rgba(0, 0, 0, 0.281), -17px -17px 34px rgba(255, 255, 255, 0.233);  
+    margin: 4.5em auto 2.5em auto;
+    position: relative;
+    border-radius: 8px;
+    flex-direction: column;
+    
+}
+
+.scroll_area{
+    width: 100%;
+    height: 100%;   
+    position: relative;
+    border-radius: 8px;
+    
+    
+    background-size: cover;
+}
+
+.staff_area{
+    
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    
+    
+    background-size: cover;
+}
+
+.redBar{
+    display: none;
+    position: absolute;
+    width:3px;
+    height: 300px;
+    background: red;
+
+}
+
+/*===============================================
+    Staff Lines
+================================================*/
+
+.treb-cleft{
+    
+    margin: 50px 0px 38px 0px;
+    padding: 0px 15px;
+     
+}
+
+.base-cleft{
+
+   
+    margin: 20px 0px 35px 0px;
+    padding: 0px 15px;
+    
+}
+
+.staff{
+
+    width: 100%;
+    margin: 0px 0px 18px 0px;
+    
+}
+
+.staff .staffLine{
+  
+  width: 100%;
+  height: 2px;
+}
+
+/* ========================================
+    Settings Menu
+==========================================*/
+
+.settings_overlay{
+    
+    position: absolute;
+    padding-top: 80px;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    background: rgba(0,0,0,.6);
+    align-items: center;
+    z-index: 10;
+}
+
+.settings_area .close_button{
+    position: absolute;
+    transform: translate(242px,-15px);
+  
+    background: rgb(49, 47, 47);
+    color: rgb(255, 255, 255);
+    padding: 8px;
+    border-radius: 5px;
+
+}
+
+.open{
+    display: flex;
+   
+}
+
+.settings_area .slider{
+    
+   flex: 1;
+   -webkit-appearance: none;  /* Override default CSS styles */
+   height: 8px;
+
+   border-radius: 10px;
+
+  background: white; /* Grey background */
+    
+    
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 10px; /* Set a specific slider handle width */
+    border-radius:  25%;
+    height: 30px; /* Slider handle height */
+    background: #2c2c2c; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+
+
+
+.settings_area{
+    
+    display: none;
+    position: fixed;
+    padding: 15px;
+    left: 50%;
+    transform: translate(-50%,0px);
+    gap: 15px;
+    flex-direction: column;
+    outline: 3px solid rgba(0,0,0,.3);
+    max-width: 18rem;
+    max-height: 46.5rem;
+    border-radius: 8px;
+    text-align: center;
+    overflow-y: scroll;
+    z-index: 400;
+}
+
+.settings_area::-webkit-scrollbar {
+    width: 2px;
+}
+
+.area{
+    
+    display: flex;
+    min-height: 80px;
+    margin: 20px 0 0 0;
+    
+    border-top: 2px solid rgba(255, 255, 255, 0.582);
+
+}
+
+.area div{
+    padding-top: 30px;
+    cursor: pointer;
+    text-align: center;
+    flex: 1;
+    border: none;
+}
+
+
+
+.settings_row{
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 25px; 
+    margin-bottom: 40px;
+    
+    
+}
+
+.settings_row-toggle{
+    margin: 20px 0px;
+    border-top: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
+    padding: 10px 0px;
+    display: flex;
+    flex: 1 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.settings_row-toggle .toggle-name{
+    
+    text-align: center;
+    flex-basis: 160px;
+    border-radius: 8px;
+    margin: 5px 0px;
+    font-weight: bold;
+    background: white;
+    color: #2c2c2c;
+    padding: 5px;
+}
+
+.variable{
+    width: max-content;
+    padding: 5px;
+    font-weight: bold;
+    margin-left: 30px;
+    background: white;
+    color: #2c2c2c;
+    border: 2px solid #2c2c2c;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.setting_name{
+
+  
+    flex: 1 0 100%;
+    text-align: center;
+}
+
+.check-box{
+   
+    position: relative;
+    font-size: .75em;
+    outline: 2px solid black;
+    background: white;
+    padding:  8px;
+    color: #2c2c2c;
+    font-weight: bold;
+    margin-top: 10px;
+    word-spacing: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+   
+}
+
+.check-box-slider{
+    position: absolute;
+    width: 31px;
+    height: 30px;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+
+input[type="color"]{
+    display: block;
+    height: 45px;
+   
+    width: 100%;
+   
+  
+  
+    border: none;
+    border-color: transparent;
+    
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    border: 2px solid #2c2c2c;
+    border-radius: 4px;
+    
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+
+/* ========================================
+    Music note styling
+==========================================*/
+
+
+.note{
+
+    top: 0px;
+    position: absolute;
+   
+}
+
+
+
+/*===============================================
+    Element Based Note Styling
+================================================*/
+
+.note_box{
+    position: absolute;
+    width: 25px;
+    height: 70px;
+    top: 0px;
+    left: 5px;
+}
+
+ .note_box .note_body{
+
+    width: 26px;
+    height: 17px;
+   
+    position: absolute;
+    bottom: 1px;
+    left: -1px;
+    border-radius: 50%;
+    transform: rotate(-30deg);
+    z-index: 1;
+
+
+}
+
+.note_box  .note_stem{
+
+    position: absolute;
+    width: 3px;
+    height: 59px;
+    right: .04em;
+    border-radius: 2px 4px 15px;
+
+}
+
+
+.button_area{
+    
+    display: flex;
+    justify-content: space-around;
+    margin: 2em 0 0 0;
+    flex-wrap: wrap;
+    padding: 15px 0px;
+    
+}
+
+
+/*===============================================
+    Mobile Styles
+================================================*/
+
+
+
+@media screen and (max-width: 1000px){
+    
+    html, body {
+        overflow-x: hidden;
+      }
+      body {
+        position: relative;
+      }
+
+      .settings_overlay{
+        padding-top: 25px;
+      }
+
+      .settings_area{
+        position: fixed;
+       width: 100vw;
+       min-height: 37.1em;
+
+        
+      }
+    
+    .settings_area{
+    
+        display: none;
+        position: fixed;
+        padding: 15px;
+        left: 50%;
+        transform: translate(-50%,0px);
+        gap: 15px;
+        flex-direction: column;
+        outline: 3px solid rgba(0,0,0,.3);
+        max-width: 18rem;
+        max-height: 31.8rem;
+        border-radius: 8px;
+        text-align: center;
+        overflow-y: scroll;
+        z-index: 400;
+    }
+      .chart_container{
+       position: absolute;
+       background: red;
+       inset: 0; 
+       border-radius: 3px;
+       height: 100vh;
+       padding: 30px 15px;
+       overflow: scroll;
+       flex-wrap: wrap;
+      }
+
+.chart::after{
+    content: '';
+    position: absolute;
+    top: 177px;
+    left: 34px; 
+    width: 76px;
+    height: 76px;
+    z-index: 0;
+    box-shadow: 17px 17px 34px rgba(0, 0, 0, 0.295), -17px -17px 34px rgba(255, 255, 255, 0.24);
+    border-radius: 50%;
+    transform: translate(3px,-151px);
+}
+
+.chart{
+    position: relative;
+    flex: 0 1 145px;
+}
+
+
+
+     .interval_total{
+        position: absolute;
+        left: -300px;
+        font-size: 8em;
+        color: white;
+        opacity: .5;
+    }
+
+ 
+      
+    .button_area{
+    
+        display: flex;
+        justify-content: center;
+        margin: 2em 0 0 0;
+        flex-wrap: wrap;
+        
+        gap: 1.5em;
+    }
+
+
+}
+
+.ledgerOn{
+    
+    transform: translate(-12px,60px);
+    width: 50px;
+    height: 2px;
+    
+    
+}
+
+.ledgerOff{
+
+    display: none;
+
+}
+
+.button_area button{
+    background: none;
+    width: 76px;
+    box-shadow: 17px 17px 34px rgba(0, 0, 0, 0.295), -17px -17px 34px rgba(255, 255, 255, 0.219);
+    height: 59px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+}
+
+/*===============================================
+    Tutorial Info Tabs
+================================================*/
+
+.tutBox{
+    display: none; /* set to flex to enable*/
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    background: rgba(247, 232, 232, 0.87);
+    width: 315px;
+    color: rgb(0, 0, 0);
+    font-size: 1.2em;
+    height: 90px;
+    text-align: center;
+    border-radius: 8px;
+    
+    transform: translate(3em, 0em);
+    
+  }
+  
+  .tutBox p{
+    padding: 10px;
+  }
+  
+  .tutBox::before{
+    position: absolute;
+    content: '';
+    width: 20px;
+    z-index: -1;
+    height: 20px;
+    transform: translate(18em, 0em);
+    border-radius: 50%;
+    background: inherit;
+  }
+  
+  .tutBox::after{
+    content: '';
+    position: absolute;
+    transform: translate(8em,0em);
+    width: 400px;
+    height: 10px;
+    background: inherit;
+    border-radius: 8px;
+    z-index: -1;
+  }
+  
+#settings::after,#settings::before,
+#fullscreen1::after,#fullscreen2::before, #fullscreen2::after,
+#stats::after,#stats::before,
+#intervalButtons::before,#intervalButtons::after,
+#Keyboard_info::after,#Keyboard_info::before{
+    background: rgba(247, 232, 232, 0.247);
+}
+
+#fullscreen1{
+    display: none;
+    transform: translate(1em, -.75em);
+    z-index: 300;
+    
+}
+
+#fullscreen2{
+    display: none;
+    transform: translate(1em, 22em);
+    z-index: 300;
+}
+  
+#settings{
+    display: none;
+    transform: translate(81em, 22em);
+    z-index: 300;
+}
+
+#settings::after{
+    transform: translate(-8em,0em);
+ 
+}
+
+#settings::before{
+    transform: translate(-18em, 0em);
+  
+}
+
+#intervalButtons{
+    display: none;
+    transform: translate(1em, 16.5em);
+    z-index: 300;
+}
+
+#intervalButtons::before{
+    transform: translate(40em, 0em);
+    width: 55em;
+    height: 4em;
+    background: rgba(247, 232, 232, 0.247);
+    border-radius: 8px;
+}
+
+#intervalButtons::after{
+    width: 10em;
+    background: rgba(247, 232, 232, 0.247);
+}
+
+#stats{
+    display: none;
+    transform: translate(39em, 33em);
+    z-index: 300;
+}
+
+#stats::after{
+   
+    transform: translate(0em,-6em) rotate(-90deg);
+    width: 10em;
+}
+
+#stats::before{
+transform: translate(0em,-10.8em);
+}
+
+/* Slider Settings */
+
+#drag_note_count{
+    display: none;
+  
+    transform: translate(16em,2.5em);
+    z-index: 300;
+}
+
+#drag_note_distance{
+    display: none;
+   
+    transform: translate(16em,7em);
+    z-index: 300;
+}
+
+#drag_note_staffMax{
+    display: none;
+  
+    transform: translate(16em,11em);
+    z-index: 300;
+}
+
+#drag_note_Offset{
+    display: none;
+   
+    transform: translate(16em,15em);
+    z-index: 300;
+}
+
+#drag_interval_range{
+    display: none;
+  
+    transform: translate(16em,19.5em);
+    z-index: 300;
+}
+
+/* Toggle Settings */
+
+#toggle_staff_type{
+    display: none;
+  
+    transform: translate(16em,1.5em);
+    z-index: 300;
+}
+
+#toggle_black_notes{
+    display: none;
+   
+    transform: translate(16em,4em);
+    z-index: 300;
+}
+
+#toggle_note_glow{
+    display: none;
+    
+    transform: translate(16em,7em);
+    z-index: 300;
+}
+
+#toggle_random_noteCount{
+    display: none;
+   
+    transform: translate(16em,10em);
+    z-index: 300;
+}
+
+#toggle_single_mode{
+    display: none;
+   
+    transform: translate(16em,13em);
+    z-index: 300;
+}
+
+#color_input_1{
+    display: none;
+  
+    transform: translate(16em,18.5em);
+    z-index: 300;
+}
+
+#color_input_2{
+    display: none;
+    transform: translate(16em,22.5em);
+    z-index: 300;
+}
+
+#Keyboard_info{
+    
+    z-index: 300;
+}
+
+#Keyboard_info::before{
+    border-radius: 8px;
+    transform: translate(42em,0em);
+    content: '';
+    position: absolute;
+    width: 930px;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image:  url("./images/KeyboardImage.png");
+    
+}
